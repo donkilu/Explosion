@@ -139,26 +139,23 @@ To further make the cloud of soot look more realistic, each soot particles simul
 
 <p>With the particle system we developed using the simulation and rendering methods described above, we model two types of explosions where 1) fuel particles burn out completely in one time step, and 2) fuel particles explode and continue to burn for a few time steps. We ignite the fuel particles by setting the initial temperature of the fluid cell containing the fuel particles significantly higher than ignition threshold, and allow fuel particles to heat up during the first couple of time steps. Table below shows our final configuration of the constant variables for the two simulations. We first reference the values provided in [1] then adjust them to best fit our simulations. Note that the only differences between the two simulations are the initial number of fuel particles and the initial mass of the fuel particles, which are 15000, 0.2 and 5000, 1.0, respectively for simulation for 1) and 2). The ignition threshold is set to be 323.</p>
 
-<p>Thermal</p>
+<p>Thermal
+| Cr   | Ck | Ta  | Tmax |
+|------|----|-----|------|
+|0.0001| 5  | 300 | 2000 |
+Fluid
+| rho  | Cv  | alpha_buoy | beta_buoy  | epsilon_vort |
+|------|-----|------------|------------|--------------|
+| 1.0  | 1.0 |   0.05     |     0.05   | 0.1          |
+Fluid
+| m          | z    | Cm    |  r  | bg  |  bh  | alpha_h | alpha_d |
+|------------|------|-------|-----|-----|------|---------|---------|
+| 0.2 / 1.0  | 0.21 | 20.54 | 0.1 | 1.5 | 2300 |  15000  |   550   |</p>
 
-<table>
-<thead>
-<tr>
-<th>Cr</th>
-<th>Ck</th>
-<th>Ta</th>
-<th>Tmax</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>0.0001</td>
-<td>5</td>
-<td>300</td>
-<td>2000</td>
-</tr>
-</tbody>
-</table>
+<p>Fluid
+|   m   | Cm    |  r   | bs  | alpha_h | alpha_d |
+|-------|-------|------|-----|---------|---------|
+| 0.005 | 13.86 | 0.01 | 1.0 | 350000  |   10    |</p>
 
 <p>Series of pictures below shows the two explosion effects 1) and 2) respectively as time advances:</p>
 
